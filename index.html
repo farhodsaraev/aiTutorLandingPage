@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REVERSE_ENGINEER // SYSTEM_OVERRIDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'sci-base': '#030305',
+              'sci-panel': '#0f1115',
+              'sci-cyan': '#00f3ff',
+              'sci-yellow': '#fcee0a',
+              'sci-red': '#ff2a2a',
+              'sci-dim': '#2d2d35',
+              'sci-text': '#e0e0e0',
+            },
+            fontFamily: {
+              sans: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, #2d2d35 1px, transparent 1px), linear-gradient(to bottom, #2d2d35 1px, transparent 1px)",
+              'caution-tape': "repeating-linear-gradient(45deg, #fcee0a, #fcee0a 10px, #000 10px, #000 20px)",
+            },
+            boxShadow: {
+              'glow': '0 0 10px rgba(0, 243, 255, 0.3)',
+              'glow-hard': '4px 4px 0px 0px #00f3ff',
+              'glow-error': '4px 4px 0px 0px #ff2a2a',
+            },
+            animation: {
+              'scanline': 'scanline 2s linear infinite',
+              'blink': 'blink 1s step-end infinite',
+              'glitch': 'glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              scanline: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              },
+              blink: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' }
+              },
+              glitch: {
+                '0%': { transform: 'translate(0)' },
+                '20%': { transform: 'translate(-2px, 2px)' },
+                '40%': { transform: 'translate(-2px, -2px)' },
+                '60%': { transform: 'translate(2px, 2px)' },
+                '80%': { transform: 'translate(2px, -2px)' },
+                '100%': { transform: 'translate(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #030305;
+        color: #e0e0e0;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* Custom Scrollbar for Chrome/Safari/Edge */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f1115; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2d2d35; 
+        border: 1px solid #00f3ff;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00f3ff; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
